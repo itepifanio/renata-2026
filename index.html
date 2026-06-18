@@ -59,6 +59,14 @@
                     <div><span>confiável</span><strong>😊😊😊</strong></div>
                     <div><span>legal</span><strong>🧊🧊🧊</strong></div>
                     <div><span>sexy</span><strong>❤️❤️❤️</strong></div>
+                    <div>
+                        <span>aniversário</span>
+                        <button
+                            id="aniversario"
+                            onclick="toogleCard()">
+                            🥳
+                        </button>
+                    </div>
                 </div>
 
                 <div class="tab">social</div>
@@ -208,7 +216,37 @@
                 </div>
             </section>
         </aside>
+
+        <div id="card">
+            <div class="imgBox">
+                <div class="bark"></div>
+                <img src="img/dino.png">
+            </div>
+            <div class="details">
+                <h4 class="card-title">Você não é um fóssil! (Ainda)</h2>
+                <h4 class="card-subtitle margin">(Feliz aniversárioooo)</h3>
+                <p>Renatinhaaaa...</p>
+                <p>Muita academia,</p>
+                <p>comida orgÂanica,</p>
+                <p>menos água pesada,</p>
+                <p>novos hobbies,</p>
+                <p>boulos,</p>
+                <p>e anos de vida!</p>
+                <p class="text-right">Abraços virtuais</p>
+                <p class="text-right">Com amor, Ítalo e Sandra <3</p>
+            </div>
+	    </div>
     </main>
+
+    <script type="text/javascript">
+        function toogleCard() {
+            if (document.getElementById('card').style.display == "none") {
+                document.getElementById('card').style.display='block';
+            } else {
+                document.getElementById('card').style.display='none';
+            }
+        }
+    </script>
 </body>
 
 </html>
