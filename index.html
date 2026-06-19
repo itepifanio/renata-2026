@@ -192,7 +192,7 @@
                 </div>
             </section>
 
-            <section class="panel communities-panel" aria-labelledby="communities-title">
+            <section class="panel communities-panel">
                 <h2 id="communities-title">comunidades <span>(764)</span></h2>
                 <div class="tiles communities-grid">
                     <a class="tile" href="#">
@@ -236,8 +236,10 @@
 
             <section class="panel contacts-panel ads" id="ads">
                 <div>
-                    <button class="ads-button" id="ads-btn">x</button>
-                    <h2>Ads</h2>
+                    <div class="ads-header">
+                        <button class="ads-button" id="ads-btn">x</button>
+                        <h2>Ads</h2>
+                    </div>
                     <img src="img/maze-demilus.png">
                 </div>
             </section>
@@ -303,6 +305,7 @@
             // Tornar o painel posicionado para poder mover
             adsPanel.parentElement.style.position = 'relative';
             adsPanel.style.position = 'absolute';
+            adsPanel.style.bottom = '-160px';
             adsPanel.style.transition = 'all 0.2s ease-out';
 
             let escapeCount = 0;
