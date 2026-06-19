@@ -1,9 +1,9 @@
 #player{
-    background-color: #D52F31;
+    background-color: #84a9dc;
     width: 330px;
     height: 190px;
     border-radius: 8px;
-    box-shadow: 0 8px 0 0 rgb(190, 39, 42) ;
+    box-shadow: 0 8px 0 0 rgb(93, 141, 202) ;
     position: absolute;
     top: 0;
     left: 0;

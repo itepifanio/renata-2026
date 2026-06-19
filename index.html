@@ -67,7 +67,9 @@
                     <div>
                         <span>aniversário</span>
                         <button id="aniversario" onclick="toogleCard()">
+                            <span>
                             🥳
+                            </span>
                         </button>
                     </div>
                 </div>
@@ -231,6 +233,13 @@
                     </a>
                 </div>
             </section>
+
+            <section class="panel contacts-panel">
+                <div id="ads">
+                    <h2>Ads</h2>
+                    <img src="img/maze-demilus.png">
+                </div>
+            </section>
         </aside>
 
         <div id="card">
@@ -285,6 +294,32 @@
                 document.getElementById('card').style.display = 'none';
             }
         }
+
+        // ads demillus
+        document.addEventListener("DOMContentLoaded", function() {
+            const button = document.getElementById("ads");
+
+            const animateMove = (element, prop, pixels) =>
+            anime({
+                targets: element,
+                [prop]: `${pixels}px`,
+                easing: "easeOutCirc"
+            });
+
+            ["mouseover", "click"].forEach(function (el) {
+            button.addEventListener(el, function (event) {
+                const top = getRandomNumber(window.innerHeight - this.offsetHeight);
+                const left = getRandomNumber(window.innerWidth - this.offsetWidth);
+
+                animateMove(this, "left", left).play();
+                animateMove(this, "top", top).play();
+            });
+            });
+
+            const getRandomNumber = (num) => {
+            return Math.floor(Math.random() * (num + 1));
+            };
+        });
 
         // scroll confetti
         (function () {
@@ -424,7 +459,6 @@
             window.addEventListener('scroll', handleScroll, { passive: true });
             window.addEventListener('wheel', handleWheel, { passive: true });
         })();
-
     </script>
 </body>
 

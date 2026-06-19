@@ -653,3 +653,11 @@ a:hover {
   color: #000;
   font-size: 18px;
 }
+
+#ads {
+  cursor: pointer;
+}
+
+#ads img{
+  max-width: 250px;
+}
