@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/vynil.css">
 </head>
 
 <body>
@@ -27,7 +28,7 @@
             <div class="account">renatinha_de_maze@yahoo.com</div>
             <a class="logout" href="#">Sair</a>
             <form class="search" action="#">
-                <input id="search" type="search" placeholder="pesquisa do orkut">
+                <input id="search" type="search" placeholder="digite R aqui">
                 <button type="submit"></button>
             </form>
         </div>
@@ -253,9 +254,30 @@
                     </div>
             </div>
         </div>
+
+        <div id="player">
+            <div class="record">
+                <div class="label"></div>
+            </div>
+            <div class="stick">
+                <div class="screw"></div>
+            </div>
+            <button class="power"></button>
+
+            <div class="dj-name">DJ Sandrinha</div>
+        </div>
+
+        <audio
+            loop
+            class="mysong"
+            src="assets/renata.mp3" preload="auto">
+        </audio>
+
     </main>
 
+    <script src="js/vynil.js"></script>
     <script type="text/javascript">
+        // toogle card
         function toogleCard() {
             if (document.getElementById('card').style.display == "none") {
                 document.getElementById('card').style.display = 'block';
@@ -264,6 +286,7 @@
             }
         }
 
+        // scroll confetti
         (function () {
             const canvas = document.getElementById('confetti-canvas');
             const ctx = canvas.getContext('2d');
