@@ -537,115 +537,116 @@ a:hover {
 }
 
 #card {
-	color: #013243; /*SHERPA BLUE*/
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 300px;
-	height: 400px;
-	background: #e0e1dc;
-	transform-style: preserve-3d;
-	transform: translate(-50%,-50%) perspective(2000px);
-	box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5);
-	transition: 1s;
+  color: #013243;
+  /*SHERPA BLUE*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 400px;
+  background: #e0e1dc;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) perspective(2000px);
+  box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5), 20px 0 60px rgba(0, 0, 0, .5);
+  transition: 1s;
   display: none;
 }
 
 #card:hover {
-	transform: translate(-50%,-50%) perspective(2000px) rotate(15deg) scale(1.2);
-	box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
+  transform: translate(-50%, -50%) perspective(2000px) rotate(15deg) scale(1.2);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5), 0 10px 100px rgba(0, 0, 0, .5);
 }
 
 #card:before {
-	content:'';
-	position: absolute;
-	top: -5px;
-	left: 0;
-	width: 100%;
-	height: 5px;
-	background: #BAC1BA;
-	transform-origin: bottom;
-	transform: skewX(-45deg);
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #BAC1BA;
+  transform-origin: bottom;
+  transform: skewX(-45deg);
 }
 
 #card:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: -5px;
-	width: 5px;
-	height: 100%;
-	background: #92A29C;
-	transform-origin: left;
-	transform: skewY(-45deg);
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 5px;
+  height: 100%;
+  background: #92A29C;
+  transform-origin: left;
+  transform: skewY(-45deg);
 }
 
 #card .imgBox {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	transform-origin: left;
-	transition: .7s;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-origin: left;
+  transition: .7s;
 }
 
 #card .bark {
-	position: absolute;
-	background: #e0e1dc;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	transition: .7s;
+  position: absolute;
+  background: #e0e1dc;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: .7s;
 }
 
 #card .imgBox img {
-	min-width: 250px;
-	max-height: 400px;
+  min-width: 250px;
+  max-height: 400px;
 }
 
 #card:hover .imgBox {
-	transform: rotateY(-135deg);
+  transform: rotateY(-135deg);
 }
 
 #card:hover .bark {
-	opacity: 1;
-	transition: .6s;
+  opacity: 1;
+  transition: .6s;
   box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
 }
 
 #card .details {
-	position: absolute;
-	top: 0;
-	left: 0;
-	box-sizing: border-box;
-	padding: 0 0 0 10px;
-	z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 0 0 0 10px;
+  z-index: -1;
 }
 
 #card .details p {
-	line-height: 5px;
-	transform: rotate(-10deg);
-	padding: 0 0 0 20px;
+  line-height: 5px;
+  transform: rotate(-10deg);
+  padding: 0 0 0 20px;
 }
 
 #card .details h4 {
-	text-align: center;
+  text-align: center;
 }
 
 .card-title,
 .card-subtitle,
-.card-text{
+.card-text {
   font-family: "Schoolbell", cursive;
   font-weight: 700;
 }
 
 .card-title {
-  color:#1BBC9B;
+  color: #1BBC9B;
   text-align: center;
   font-size: 24px;
 }
 
-.card-subtitle{
-  color:#C0392B;
+.card-subtitle {
+  color: #C0392B;
   font-size: 18px;
 }
 
@@ -654,10 +655,51 @@ a:hover {
   font-size: 18px;
 }
 
+.ads {
+  background: #f9f9f9;
+  border: 1px solid #cbd8e7;
+  border-radius: 5px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .26);
+  padding: 10px;
+}
+
 #ads {
+  position: relative;
+  background: f9f9f9;
+  border: 1px solid #cbd8e7;
+  border-radius: 5px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .26);
+  padding: 10px;
+}
+
+#ads img {
+  max-width: 250px;
   cursor: pointer;
 }
 
-#ads img{
-  max-width: 250px;
+.ads-button {
+  position: relative;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.ads-button:hover {
+  background: #a93226;
+  transform: scale(1.1);
+}
+
+.ads-button:active {
+  background: #922b21;
 }

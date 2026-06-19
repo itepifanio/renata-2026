@@ -68,7 +68,7 @@
                         <span>aniversário</span>
                         <button id="aniversario" onclick="toogleCard()">
                             <span>
-                            🥳
+                                🥳
                             </span>
                         </button>
                     </div>
@@ -234,8 +234,9 @@
                 </div>
             </section>
 
-            <section class="panel contacts-panel">
-                <div id="ads">
+            <section class="panel contacts-panel ads" id="ads">
+                <div>
+                    <button class="ads-button" id="ads-btn">x</button>
                     <h2>Ads</h2>
                     <img src="img/maze-demilus.png">
                 </div>
@@ -249,18 +250,18 @@
             </div>
             <div class="details">
                 <h4 class="card-title">Você não é um fóssil! (Ainda)</h4>
-                    <h4 class="card-subtitle">(Feliz aniversárioooo)</h4>
-                    <div class="card-text">
-                        <p>Renatinhaaaa...</p>
-                        <p>Muita academia,</p>
-                        <p>comida orgÂanica,</p>
-                        <p>menos água pesada,</p>
-                        <p>novos hobbies,</p>
-                        <p>boulos,</p>
-                        <p>e anos de vida!</p>
-                        <p class="text-right">Abraços virtuais</p>
-                        <p class="text-right">Com amor, Ítalo e Sandra <3 </p>
-                    </div>
+                <h4 class="card-subtitle">(Feliz aniversárioooo)</h4>
+                <div class="card-text">
+                    <p>Renatinhaaaa...</p>
+                    <p>Muita academia,</p>
+                    <p>comida orgÂanica,</p>
+                    <p>menos água pesada,</p>
+                    <p>novos hobbies,</p>
+                    <p>boulos,</p>
+                    <p>e anos de vida!</p>
+                    <p class="text-right">Abraços virtuais</p>
+                    <p class="text-right">Com amor, Ítalo e Sandra <3 </p>
+                </div>
             </div>
         </div>
 
@@ -276,10 +277,7 @@
             <div class="dj-name">DJ Sandrinha</div>
         </div>
 
-        <audio
-            loop
-            class="mysong"
-            src="assets/renata.mp3" preload="auto">
+        <audio loop class="mysong" src="assets/renata.mp3" preload="auto">
         </audio>
 
     </main>
@@ -296,29 +294,43 @@
         }
 
         // ads demillus
-        document.addEventListener("DOMContentLoaded", function() {
-            const button = document.getElementById("ads");
+        document.addEventListener("DOMContentLoaded", function () {
+            const adsPanel = document.getElementById("ads");
+            const adsBtn = document.getElementById("ads-btn");
 
-            const animateMove = (element, prop, pixels) =>
-            anime({
-                targets: element,
-                [prop]: `${pixels}px`,
-                easing: "easeOutCirc"
+            if (!adsPanel || !adsBtn) return;
+
+            // Tornar o painel posicionado para poder mover
+            adsPanel.parentElement.style.position = 'relative';
+            adsPanel.style.position = 'absolute';
+            adsPanel.style.transition = 'all 0.2s ease-out';
+
+            let escapeCount = 0;
+
+            adsBtn.addEventListener('mouseenter', function () {
+                escapeCount++;
+
+                // Gerar posição aleatória para fugir
+                const randomX = (Math.random() - 0.5) * 300;
+                const randomY = (Math.random() - 0.5) * 200;
+
+                adsPanel.style.transform = `translate(${randomX}px, ${randomY}px)`;
+
+                // A cada 3 tentativas de fuga, o botão funciona
+                if (escapeCount >= 3) {
+                    adsBtn.onclick = function () {
+                        adsPanel.style.display = 'none';
+                        escapeCount = 0;
+                    };
+                }
             });
 
-            ["mouseover", "click"].forEach(function (el) {
-            button.addEventListener(el, function (event) {
-                const top = getRandomNumber(window.innerHeight - this.offsetHeight);
-                const left = getRandomNumber(window.innerWidth - this.offsetWidth);
-
-                animateMove(this, "left", left).play();
-                animateMove(this, "top", top).play();
+            // Resetar a posição quando o mouse sair do botão
+            adsBtn.addEventListener('mouseleave', function () {
+                if (escapeCount < 3) {
+                    adsPanel.style.transform = 'translate(0, 0)';
+                }
             });
-            });
-
-            const getRandomNumber = (num) => {
-            return Math.floor(Math.random() * (num + 1));
-            };
         });
 
         // scroll confetti
